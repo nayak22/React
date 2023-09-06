@@ -1,30 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8D4_8Cth6cHHBntuIvaZNsK2VOUYZrLRXUa_fTAJwUs_EXfZSh6kruQuoSsEF2UexbA&usqp=CAU"
-          alt="company-logo"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
 // RestaurantList is JSON Data for displaying cards
-const resObj = [
+let resObj = [
   {
     type: "restaurant",
     data: {
@@ -1841,57 +1816,5 @@ const resObj = [
     subtype: "basic",
   },
 ];
-const RestaurantCard = ({
-  cloudinaryImageId,
-  name,
-  cuisines,
-  deliveryTime,
-  costForTwoString,
-  avgRating,
-}) => {
-  return (
-    <div className="res-card">
-      <img
-        className="res-img"
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          cloudinaryImageId
-        }
-        alt=""
-      />
-      <h3>{name}</h3>
-      <h4>{avgRating}⭐</h4>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>Averge {costForTwoString}</h4>
-      <h4>ETA {deliveryTime} minutes</h4>
-    </div>
-  );
-};
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resObj.map((restaurant) => {
-          return (
-            <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resObj;
