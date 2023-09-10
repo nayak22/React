@@ -1,0 +1,146 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 6px;
+    height: 100px;
+    margin: 15px;
+    padding:0 5px
+}
+
+.logo{
+    width: 95px;
+    /* margin: 15px; */
+}
+
+
+.nav-items > ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 25px;
+    
+}
+
+.nav-items > ul > li{
+    margin: 15px 35px 35px 35px;
+    /* justify-content: space-around; */
+    /* margin : 10px; */
+} 
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.res-card{
+    
+    width: 200px;
+    
+    margin: 15px;
+    
+    border-radius: 6px;
+    padding: 7px;
+    background-color: aliceblue;
+
+
+}
+.res-card:hover{
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.filter{
+    margin: 15px;
+    display: flex;
+}
+
+.filter-btn{
+margin: 0 10px;
+cursor: pointer;
+background-color: aliceblue;
+    color: black;
+    border-radius: 7px;
+}
+
+.res-img{
+    /* height:50%; */
+    width: 100%;
+    /* border: 0.5px solid black;
+    border-radius: 6px; */
+    
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.shimmer-card{
+    height: 300px;
+    width: 200px;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 15px;
+    background-color: aliceblue;
+}
+
+
+/* Set a style for the login button */
+button.login-btn {
+    background-color: aliceblue;
+    color: black;
+    padding: 14px 20px ;
+    margin: 0 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    font-weight: bold;
+    
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  /* Add a hover effect for the login button */
+  button.login-btn:hover {
+    opacity: 0.8;
+  }
+
+  .search-btn{
+    margin:0 10px;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 7px;
+  }
+  .search-box{
+    border-radius: 7px;
+  }
+
+
+
+  .shimmer-container-menu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+.shimmer-card-menu{
+    height: 150px;
+    width: 100vw;
+    border-radius: 6px;
+    padding: 7px;
+    margin: 15px;
+    background-color: aliceblue;
+}
+
+.item-container{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.food-img-container .res-img{
+    width: 118px;
+    height: 96px;
+    
+
+}
+
