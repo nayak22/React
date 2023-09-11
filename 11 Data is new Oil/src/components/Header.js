@@ -1,15 +1,26 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnLogin, setBtnLogin] = useState("Login");
 
+  const userData = useContext(UserContext);
+  const [userName, setUserName] = useState();
+  console.log(userData);
   const onlineStatus = useOnlineStatus();
-
+  const loginInfo = {
+    loggedInUser: "Samrath Nayak",
+  };
   const logintoApp = () => {
-    btnLogin === "Login" ? setBtnLogin("Log Out") : setBtnLogin("Login");
+    if (btnLogin === "Login") {
+      setBtnLogin("Log Out");
+      setUserName(loginInfo.loggedInUser);
+    } else {
+      setBtnLogin("Login");
+    }
   };
   return (
     <div className="header flex justify-between bg-gray-800 text-white">
@@ -62,6 +73,9 @@ const Header = () => {
             </button>
           </li>
           <li className="px-4">{onlineStatus ? "Online🟢" : "Offline🔴"}</li>
+          <UserContext.Provider value={{ loggedInUser: userName }}>
+            <li className="px-4">{userData.loggedInUser}</li>
+          </UserContext.Provider>
         </ul>
       </div>
     </div>

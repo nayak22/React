@@ -6,6 +6,8 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 
 function RestaurantMenu() {
+  const [showIndex, setShowIndex] = useState(null);
+
   const { resId } = useParams();
 
   const resInfo = useRestaurantMenu(resId);
@@ -48,12 +50,14 @@ function RestaurantMenu() {
           {" MINS"}
         </span>
 
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           // console.log(category);
 
           <RestaurantCategory
             key={category?.card?.card?.title}
             data={category?.card?.card}
+            showItems={index == showIndex ? true : false}
+            setShowIndex={() => setShowIndex(index)}
           />
         ))}
       </div>
